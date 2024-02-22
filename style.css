@@ -1,0 +1,53 @@
+.content {
+    display: inline-flex;
+    padding: 20px;
+    gap: 50px;
+    border: 5px solid red;
+}
+
+.book-list th{
+    border-bottom: 1px solid black;
+    text-align: left;
+    padding: 5px
+}
+
+.book-list table {
+    border-spacing: 10px;
+    border-collapse: separate;
+    border: 1px solid;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid green;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+.form-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.form-child {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.has-read {
+    display: flex;
+    align-items: center;
+}
+
+form input {
+    width: 200px;
+}
+
+input[type="checkbox" i] {
+    margin: 0px;
+    width: 50px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title of Page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="javascript.js" defer></script>
+</head>
+<body>
+    <div class="content">
+        <div class="book-list">
+            <table>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Number of Pages</th>
+                  <th>Has Been Read</th>
+                </tr>
+                <tr>
+                    <td class="title">Alfreds Futterkiste</td>
+                    <td class="author">Maria Anders</td>
+                    <td class="num-of-pages">Germany</td>
+                    <td class="has-read">Germany</td>
+                  </tr>
+            </table>
+        </div>
+            <div class="form">
+            <div class="form-child">
+                <label for="title">Title:</label>
+                <input type="text" id="title" required>
+            </div>
+            <div class="form-child">
+                <label for="author">Author:</label>
+                <input type="text" id="author" required>
+            </div>
+            <div class="form-child">
+                <label for="pages">Number of Pages:</label>
+                <input type="number" placeholder="0" id="pages" required>
+            </div>
+            <div class="form-child">
+                <div class="has-read">
+                    <label for="hasRead">Has Read</label>
+                    <input type="checkbox" id="hasRead">
+                </div>
+            </div>
+            <div class="form-child">
+                <button type="submit">Add Book</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
