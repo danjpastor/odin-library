@@ -9,39 +9,45 @@
     <script src="javascript.js" defer></script>
 </head>
 <body>
+    <div class="header">
+        <div class="child">
+            <h2>Public Library</h2>
+        </div>
+    </div>
     <div class="content">
         <div class="book-list">
             <table>
-                <tr>
-                  <th>Title</th>
-                  <th>Author</th>
-                  <th>Number of Pages</th>
-                  <th>Has Been Read</th>
-                </tr>
             </table>
         </div>
+        <div class="popup hidden">
             <div class="form">
-            <div class="form-child">
-                <label for="title">Title:</label>
-                <input type="text" id="title" required>
-            </div>
-            <div class="form-child">
-                <label for="author">Author:</label>
-                <input type="text" id="author" required>
-            </div>
-            <div class="form-child">
-                <label for="pages">Number of Pages:</label>
-                <input type="number" placeholder="0" id="pages" required>
-            </div>
-            <div class="form-child">
-                <div class="has-read">
-                    <label for="hasRead">Has Read</label>
-                    <input type="checkbox" id="hasRead">
+                <div class="form-child">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-child">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" required>
+                </div>
+                <div class="form-child">
+                    <label for="pages">Number of Pages:</label>
+                    <input type="number" placeholder="0" id="pages" required>
+                </div>
+                <div class="form-child">
+                    <div class="has-read">
+                        <label for="hasRead">Has Read</label>
+                        <input type="checkbox" id="hasRead">
+                    </div>
+                </div> 
+                <div class="form-child">
+                    <button type="submit">Add Book</button>
                 </div>
             </div>
-            <div class="form-child">
-                <button type="submit">Add Book</button>
-            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="child">
+            <p>Copyright</p>
         </div>
     </div>
 </body>

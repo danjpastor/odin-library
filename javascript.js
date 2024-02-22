@@ -34,6 +34,7 @@ function Book(title, author, pages, read) {
 
 function createDelete(){
     const td = document.createElement('td');
+    td.style.cssText = "text-align: center;";
     const button = document.createElement('button')
     button.textContent = 'Delete';
 
@@ -48,6 +49,8 @@ function createDelete(){
 
 function createToggle(){
     const td = document.createElement('td');
+    td.style.cssText = "text-align: center;";
+
     const button = document.createElement('button')
     button.textContent = 'Toggle Status';
 
@@ -79,11 +82,11 @@ function createEntry(book){
         tr.appendChild(td)               
     }
 
-    deleteButton = createDelete()
-    tr.appendChild(deleteButton)
-
     toggleButton = createToggle()
     tr.appendChild(toggleButton)
+
+    deleteButton = createDelete()
+    tr.appendChild(deleteButton)
     
     table.appendChild(tr)
 }
