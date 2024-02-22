@@ -37,6 +37,19 @@ function createEntry(book){
         td.textContent = book[j]
         tr.appendChild(td)               
     }
+    const td = document.createElement('td');
+
+    const button = document.createElement('button')
+    button.textContent = 'Delete';
+
+    button.addEventListener("click", (event) => {
+        var td = event.target; 
+        var tr = td.parentNode;
+        tr.parentNode.removeChild(tr);;
+    })
+
+    tr.appendChild(button)
+    
     table.appendChild(tr)
 }
 
@@ -61,6 +74,12 @@ function addBookToLibrary() {
     let pages = document.querySelector('#pages').value;
     let read = document.querySelector('#hasRead').checked;
 
+    if (read == true){
+        read = "Yes"
+    }  else{
+        read = "No"
+    }
+
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook)
 
@@ -70,6 +89,8 @@ function addBookToLibrary() {
 
     console.log(myLibrary[0])
 }
+
+
 
 populateBooks()
 addBookButton.addEventListener("click", addBookToLibrary)
