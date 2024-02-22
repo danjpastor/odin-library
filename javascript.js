@@ -1,24 +1,26 @@
 const table = document.querySelector('table');
-const addBookButton = document.querySelector('button')
 
-const myLibrary = [
+const addBookButton = document.querySelector('button');
+addBookButton.addEventListener("click", addBookToLibrary);
+
+let myLibrary = [
     {
         "title": "Into The Woods",
         "author": "Bob Mackie",
         "numPages": "316",
-        "hasRead": true
+        "hasRead": true,
     },
     {
         "title": "My Fair Shady",
         "author": "Lou Biggles",
         "numPages": "237",
-        "hasRead": false
+        "hasRead": false,
     },
     {
         "title": "Happily Ever After",
         "author": "Walt Disney",
         "numPages": "601",
-        "hasRead": true
+        "hasRead": true,
     }
 ];
 
@@ -30,15 +32,8 @@ function Book(title, author, pages, read) {
   this.hasRead = read;
 }
 
-function createEntry(book){
-    let tr = document.createElement('tr')
-    for (j = 0; j < book.length; j++){
-        let td = document.createElement('td')
-        td.textContent = book[j]
-        tr.appendChild(td)               
-    }
+function createDelete(){
     const td = document.createElement('td');
-
     const button = document.createElement('button')
     button.textContent = 'Delete';
 
@@ -47,14 +42,51 @@ function createEntry(book){
         var tr = td.parentNode;
         tr.parentNode.removeChild(tr);;
     })
+    return button
+}
 
-    tr.appendChild(button)
+function createToggle(){
+    const td = document.createElement('td');
+    const button = document.createElement('button')
+    button.textContent = 'Mark Read';
+
+    button.addEventListener("click", (event) => {
+        const td = event.target; 
+        const tr = td.parentNode;
+        const tbl = tr.parentNode
+        const rowIndex = Array.prototype.indexOf.call(tbl.children, tr) - 1
+        console.log(rowIndex)
+        console.log(myLibrary[rowIndex].hasRead)
+        
+        if (myLibrary[rowIndex].hasRead == "Yes" || myLibrary[rowIndex].hasRead == true){
+            myLibrary[rowIndex].hasRead = tr.children[3].textContent = "No";
+            tr.children[3].textContent = "No";
+        }else if (myLibrary[rowIndex].hasRead == "No" || myLibrary[rowIndex].hasRead == false){
+            myLibrary[rowIndex].hasRead = tr.children[3].textContent = "Yes";
+        }
+        console.log(myLibrary[rowIndex].hasRead)   
+    })
+    return button
+}
+
+function createEntry(book){
+    let tr = document.createElement('tr')
+    for (j = 0; j < book.length; j++){
+        let td = document.createElement('td')
+        td.textContent = book[j]
+        tr.appendChild(td)               
+    }
+
+    deleteButton = createDelete()
+    tr.appendChild(deleteButton)
+
+    toggleButton = createToggle()
+    tr.appendChild(toggleButton)
     
     table.appendChild(tr)
 }
 
 function populateBooks(){
-    console.log
     for (i = 0; i < myLibrary.length; i++){
         let book = [myLibrary[i]['title'], myLibrary[i]['author'], myLibrary[i]['numPages'], myLibrary[i]['hasRead']]
         
@@ -93,5 +125,4 @@ function addBookToLibrary() {
 
 
 populateBooks()
-addBookButton.addEventListener("click", addBookToLibrary)
 
