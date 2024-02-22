@@ -39,24 +39,24 @@ function createDelete(){
 
     button.addEventListener("click", (event) => {
         var td = event.target; 
-        var tr = td.parentNode;
+        var tr = td.parentNode.parentNode;
         tr.parentNode.removeChild(tr);;
     })
-    return button
+    td.appendChild(button)
+    return td
 }
 
 function createToggle(){
     const td = document.createElement('td');
     const button = document.createElement('button')
-    button.textContent = 'Mark Read';
+    button.textContent = 'Toggle Status';
 
     button.addEventListener("click", (event) => {
         const td = event.target; 
-        const tr = td.parentNode;
+        const tr = td.parentNode.parentNode;
         const tbl = tr.parentNode
         const rowIndex = Array.prototype.indexOf.call(tbl.children, tr) - 1
         console.log(rowIndex)
-        console.log(myLibrary[rowIndex].hasRead)
         
         if (myLibrary[rowIndex].hasRead == "Yes" || myLibrary[rowIndex].hasRead == true){
             myLibrary[rowIndex].hasRead = tr.children[3].textContent = "No";
@@ -66,7 +66,9 @@ function createToggle(){
         }
         console.log(myLibrary[rowIndex].hasRead)   
     })
-    return button
+
+    td.appendChild(button)
+    return td
 }
 
 function createEntry(book){
