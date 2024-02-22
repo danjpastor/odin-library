@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Title of Page</title>
+    <title>Odin - Public Library</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -12,47 +12,53 @@
 <body>
     <div class="popup hidden">
         <div class="form-container">
-        <div class="close"><span class="material-symbols-outlined">cancel</span></div>
-            <form id="addbook" name="addbook" onsubmit="return false;">
-                <h2>Add Book:</h2>
-                <div class="form-child">
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" required>
-                </div>
-                <div class="form-child">
-                    <label for="author">Author:</label>
-                    <input type="text" id="author" required>
-                </div>
-                <div class="form-child">
-                    <label for="pages">Number of Pages:</label>
-                    <input type="number" placeholder="0" id="pages" required>
-                </div>
-                <div class="form-child">
-                    <div class="has-read">
-                        <label for="hasRead">Has Read</label>
-                        <input type="checkbox" id="hasRead">
-                    </div>
-                </div> 
-                <div class="form-child">
-                    <button type="submit" class="submit">Add Book</button>
-                </div>
-            </form>
-    </div>
+            <div class="close"><span class="material-symbols-outlined">cancel</span></div>
+                <form id="addbook" name="addbook" onsubmit="return false;">
+                    <h2>Add Book:</h2>
+                        <div class="form-child">
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" required>
+                        </div>
+                        <div class="form-child">
+                            <label for="author">Author:</label>
+                            <input type="text" id="author" required>
+                        </div>
+                        <div class="form-child">
+                            <label for="pages">Number of Pages:</label>
+                            <input type="number" placeholder="0" id="pages" required>
+                        </div>
+                        <div class="form-child">
+                            <div class="has-read">
+                                <label for="hasRead">Has Read</label>
+                                <input type="checkbox" id="hasRead">
+                            </div>
+                        </div> 
+                        <div class="form-child">
+                            <button type="submit" class="submit">Add Book</button>
+                        </div>
+                </form>
         </div>
+    </div>
     <div class="header">
-        <div class="child">
-            <h2>Public Library</h2>
+        <div class="logo">
+            <div class="child">
+                <span class="material-symbols-outlined logo">menu_book</span>
+            </div>
+            <div class="child">
+                <h2>Public Library</h2>
+            </div>
         </div>
         <div class="child">
             <button type="submit" class="addBookButton">Add Book</button>
         </div>
     </div>
+
     <div class="content">
         <div class="book-list">
-            <table>
-            </table>
+            <table></table>
         </div>
     </div>
+
     <div class="footer">
         <div class="child">
             <p>Copyright 2024</p>
