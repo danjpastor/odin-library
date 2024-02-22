@@ -74,8 +74,12 @@ td {
     width: 100px;
 }
 
+td:first-child {
+    max-width: 15px;
+}
+
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: rgb(209, 190, 177);
 }
 
 form {
@@ -165,8 +169,12 @@ span {
     margin: 0px;
 }
 
-.material-symbols-outlined.logo{
-font-size: 60px !important;
+.material-symbols-outlined.logo {
+    font-size: 60px !important;
+}
+
+.material-symbols-outlined.book {
+    font-size: 40px !important; 
 }
 
 

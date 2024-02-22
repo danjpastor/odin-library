@@ -34,6 +34,12 @@ let myLibrary = [
         "author": "Walt Disney",
         "numPages": "601",
         "hasRead": true,
+    },
+    {
+        "title": "This is the End",
+        "author": "Donnie Sanders",
+        "numPages": "423",
+        "hasRead": true,
     }
 ];
 
@@ -74,11 +80,11 @@ function createToggle(){
         const rowIndex = Array.prototype.indexOf.call(tbl.children, tr);
         console.log(rowIndex)
         
-        if (myLibrary[rowIndex].hasRead == "Yes" || myLibrary[rowIndex].hasRead == true){
-            myLibrary[rowIndex].hasRead = tr.children[3].textContent = "No";
-            tr.children[3].textContent = "No";
-        }else if (myLibrary[rowIndex].hasRead == "No" || myLibrary[rowIndex].hasRead == false){
-            myLibrary[rowIndex].hasRead = tr.children[3].textContent = "Yes";
+        if (myLibrary[rowIndex].hasRead == "Read" || myLibrary[rowIndex].hasRead == true){
+            myLibrary[rowIndex].hasRead = tr.children[4].textContent = "Hasn't Read";
+            tr.children[4].textContent = "Hasn't Read";
+        }else if (myLibrary[rowIndex].hasRead == "Hasn't Read" || myLibrary[rowIndex].hasRead == false){
+            myLibrary[rowIndex].hasRead = tr.children[4].textContent = "Read";
         }
         console.log(myLibrary[rowIndex].hasRead)   
     })
@@ -89,6 +95,14 @@ function createToggle(){
 
 function createEntry(book){
     let tr = document.createElement('tr')
+    let td = document.createElement('td')
+    let span = document.createElement('span');
+    span.classList = "material-symbols-outlined book";
+    span.textContent = "book_2";
+    td.appendChild(span);
+    tr.appendChild(td);
+
+
     for (j = 0; j < book.length; j++){
         let td = document.createElement('td')
         td.textContent = book[j]
@@ -109,9 +123,9 @@ function populateBooks(){
         let book = [myLibrary[i]['title'], myLibrary[i]['author'], myLibrary[i]['numPages'], myLibrary[i]['hasRead']]
         
         if (book[3] == true){
-            book[3] = "Yes"
+            book[3] = "Read"
         }  else{
-            book[3] = "No"
+            book[3] = "Haven't Read"
         }
 
             createEntry(book)
@@ -129,9 +143,9 @@ function addBookToLibrary() {
 
     } else {
         if (read == true){
-            read = "Yes"
+            read = "Read"
         }  else{
-            read = "No"
+            read = "Haven't Read"
         }
     
         let newBook = new Book(title, author, pages, read);
