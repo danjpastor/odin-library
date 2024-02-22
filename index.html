@@ -6,21 +6,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="javascript.js" defer></script>
 </head>
 <body>
-    <div class="header">
-        <div class="child">
-            <h2>Public Library</h2>
-        </div>
-    </div>
-    <div class="content">
-        <div class="book-list">
-            <table>
-            </table>
-        </div>
-        <div class="popup hidden">
-            <div class="form">
+    <div class="popup hidden">
+        <div class="form-container">
+        <div class="close"><span class="material-symbols-outlined">cancel</span></div>
+            <form id="addbook" name="addbook" onsubmit="return false;">
+                <h2>Add Book:</h2>
                 <div class="form-child">
                     <label for="title">Title:</label>
                     <input type="text" id="title" required>
@@ -40,14 +34,28 @@
                     </div>
                 </div> 
                 <div class="form-child">
-                    <button type="submit">Add Book</button>
+                    <button type="submit" class="submit">Add Book</button>
                 </div>
-            </div>
+            </form>
+    </div>
+        </div>
+    <div class="header">
+        <div class="child">
+            <h2>Public Library</h2>
+        </div>
+        <div class="child">
+            <button type="submit" class="addBookButton">Add Book</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="book-list">
+            <table>
+            </table>
         </div>
     </div>
     <div class="footer">
         <div class="child">
-            <p>Copyright</p>
+            <p>Copyright 2024</p>
         </div>
     </div>
 </body>

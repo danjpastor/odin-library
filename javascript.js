@@ -1,7 +1,20 @@
 const table = document.querySelector('table');
 
-const addBookButton = document.querySelector('button');
+const addBookButton = document.querySelector('.submit');
 addBookButton.addEventListener("click", addBookToLibrary);
+
+const popup = document.querySelector('.popup');
+const modalButton = document.querySelector('.addBookButton');
+modalButton.addEventListener('click', (e) => {
+    popup.style.display = "flex"
+})
+
+const closeButton = document.querySelector('.close');
+closeButton.addEventListener('click', (e) => {
+    popup.style.display = "none"
+})
+
+
 
 let myLibrary = [
     {
@@ -58,7 +71,7 @@ function createToggle(){
         const td = event.target; 
         const tr = td.parentNode.parentNode;
         const tbl = tr.parentNode
-        const rowIndex = Array.prototype.indexOf.call(tbl.children, tr) - 1
+        const rowIndex = Array.prototype.indexOf.call(tbl.children, tr);
         console.log(rowIndex)
         
         if (myLibrary[rowIndex].hasRead == "Yes" || myLibrary[rowIndex].hasRead == true){
@@ -111,20 +124,27 @@ function addBookToLibrary() {
     let pages = document.querySelector('#pages').value;
     let read = document.querySelector('#hasRead').checked;
 
-    if (read == true){
-        read = "Yes"
-    }  else{
-        read = "No"
+    if (!(title&&author&&pages)){
+        console.log("missing input")
+
+    } else {
+        if (read == true){
+            read = "Yes"
+        }  else{
+            read = "No"
+        }
+    
+        let newBook = new Book(title, author, pages, read);
+        myLibrary.push(newBook)
+    
+        let book = [title, author, pages, read]
+    
+        createEntry(book)
+        popup.style.display = "none"
+    
+        console.log(myLibrary[0])
+
     }
-
-    let newBook = new Book(title, author, pages, read);
-    myLibrary.push(newBook)
-
-    let book = [title, author, pages, read]
-
-    createEntry(book)
-
-    console.log(myLibrary[0])
 }
 
 
